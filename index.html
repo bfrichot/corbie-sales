@@ -44,6 +44,7 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#features" class="text-gray-600 hover:text-raven-brown transition">Features</a>
                     <a href="#how-it-works" class="text-gray-600 hover:text-raven-brown transition">How It Works</a>
+                    <a href="#architecture" class="text-gray-600 hover:text-raven-brown transition">Architecture</a>
                     <a href="#use-cases" class="text-gray-600 hover:text-raven-brown transition">Use Cases</a>
                     <a href="#pricing" class="text-gray-600 hover:text-raven-brown transition">Pricing</a>
                     <a href="#contact" class="bg-raven-brown text-white px-5 py-2 rounded-lg hover:bg-raven-dark transition">Contact Sales</a>
@@ -272,8 +273,305 @@ graph TB
         </div>
     </section>
 
+    <!-- The Intelligent Enterprise Section -->
+    <section id="architecture" class="py-20 px-4 bg-gradient-to-b from-raven-light to-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-raven-dark mb-4">
+                The Intelligent Enterprise
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                A structural system for connecting, understanding, and activating your business information.
+            </p>
+
+            <!-- House Visualization -->
+            <div class="relative max-w-6xl mx-auto">
+                <!-- The Full Diagram Image -->
+                <div class="bg-white rounded-2xl shadow-lg p-4 md:p-8">
+                    <img src="assets/intelligent-enterprise-house.jpg"
+                         alt="The Intelligent Enterprise House - A structural system for connecting, understanding, and activating enterprise information"
+                         class="w-full h-auto rounded-lg"
+                         loading="lazy">
+                </div>
+            </div>
+
+                <!-- Central Message -->
+                <div class="text-center mt-12">
+                    <p class="text-lg text-raven-dark font-medium max-w-2xl mx-auto">
+                        Like a smart home connects all your devices, Corbie AI connects all your business data into
+                        <span class="text-raven-brown font-semibold">one intelligent system</span> that responds to natural language.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why It Works Section -->
+    <section id="why-it-works" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-raven-dark mb-4">
+                Why Corbie AI Actually Works
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                It understands meaning, not just keywords.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                <!-- Left: The Problem/Solution -->
+                <div class="space-y-8">
+                    <!-- Traditional Search -->
+                    <div class="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
+                        <h3 class="font-semibold text-red-800 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            Traditional Search
+                        </h3>
+                        <p class="text-red-700 text-sm mb-3">Search for "pricing discussion" and miss emails that said "budget," "cost structure," or "rates."</p>
+                        <div class="bg-white/50 p-3 rounded font-mono text-xs text-red-600">
+                            Search: "pricing" → 3 results<br>
+                            Missed: 47 relevant conversations
+                        </div>
+                    </div>
+
+                    <!-- SQL Query Alternative -->
+                    <div class="bg-orange-50 border-l-4 border-orange-400 p-6 rounded-r-lg">
+                        <h3 class="font-semibold text-orange-800 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+                            </svg>
+                            Or Write SQL Across 6 Tables...
+                        </h3>
+                        <p class="text-orange-700 text-sm mb-3">Need IT to write complex queries joining multiple databases:</p>
+                        <div class="bg-gray-900 p-3 rounded font-mono text-xs text-green-400 overflow-x-auto">
+                            <pre class="whitespace-pre-wrap">SELECT e.subject, e.body, c.name,
+       m.transcript, d.content, n.notes
+FROM emails e
+LEFT JOIN contacts c ON e.contact_id = c.id
+LEFT JOIN meetings m ON c.id = m.contact_id
+LEFT JOIN documents d ON c.company_id = d.company_id
+LEFT JOIN crm_deals cd ON c.id = cd.contact_id
+LEFT JOIN notes n ON cd.id = n.deal_id
+WHERE (e.body LIKE '%pricing%'
+   OR e.body LIKE '%budget%'
+   OR e.body LIKE '%cost%'
+   OR m.transcript LIKE '%pricing%'
+   OR d.content LIKE '%rates%')
+AND c.company = 'ABC Corp'
+ORDER BY e.date DESC;</pre>
+                        </div>
+                        <p class="text-orange-600 text-xs mt-2 italic">Wait 2-3 days for IT. Still miss related content.</p>
+                    </div>
+
+                    <!-- Corbie Search -->
+                    <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+                        <h3 class="font-semibold text-green-800 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Corbie AI Search
+                        </h3>
+                        <p class="text-green-700 text-sm mb-3">Ask about pricing and find everything related - regardless of exact words used.</p>
+                        <div class="bg-white/50 p-3 rounded font-mono text-xs text-green-600">
+                            Ask: "What did we discuss about pricing with ABC Corp?"<br>
+                            Found: 50 relevant items across email, CRM, meetings
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Simple Explanation -->
+                <div class="bg-raven-light p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-raven-dark mb-6">The 768-Point Tag System</h3>
+                    <p class="text-gray-600 text-sm mb-6">Every piece of your data gets a unique "fingerprint" of 768 meaning tags.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-raven-brown text-white rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">1</div>
+                            <div>
+                                <h4 class="font-semibold text-raven-dark">Tag Everything</h4>
+                                <p class="text-gray-600 text-sm">Each email, document, and note gets scored on 768 dimensions of meaning - topic, intent, sentiment, relationships, and more.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-raven-brown text-white rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">2</div>
+                            <div>
+                                <h4 class="font-semibold text-raven-dark">Similar Tags = Related Ideas</h4>
+                                <p class="text-gray-600 text-sm">"Budget email from CFO" and "pricing discussion with finance" get similar tag patterns - so they're found together, even with different words.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-raven-brown text-white rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">3</div>
+                            <div>
+                                <h4 class="font-semibold text-raven-dark">Your Question Gets Tagged Too</h4>
+                                <p class="text-gray-600 text-sm">When you ask a question, it gets the same 768-point fingerprint - then we find all data with matching patterns.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vector Space Visualization -->
+                    <div class="mt-6 bg-white rounded-lg border border-raven-tan overflow-hidden">
+                        <div class="bg-gray-900 p-4">
+                            <img src="assets/vector-space-768.png"
+                                 alt="768-dimensional vector space visualization showing how similar data clusters together"
+                                 class="w-full h-auto rounded">
+                        </div>
+                        <div class="p-3 bg-gray-50">
+                            <p class="text-xs text-gray-600 text-center">
+                                <span class="font-semibold text-raven-brown">768-Dimensional Space:</span>
+                                Similar items cluster together. Your question finds the nearest neighbors.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Visual Vector Tag Example - Full Element -->
+                    <div class="mt-6 p-4 bg-white rounded-lg border border-raven-tan">
+                        <div class="flex items-center justify-between mb-3">
+                            <p class="text-xs text-gray-500 font-medium">Single Email Vector Tag (768 dimensions)</p>
+                            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">EMAIL-47291</span>
+                        </div>
+
+                        <!-- Email Preview -->
+                        <div class="bg-gray-50 p-3 rounded mb-4 text-xs">
+                            <div class="text-gray-500">From: sarah.chen@acme.com</div>
+                            <div class="text-gray-500">Subject: <span class="text-gray-700 font-medium">Q3 Budget Review - Action Items</span></div>
+                            <div class="text-gray-400 mt-1 italic">"Following up on yesterday's CFO meeting regarding the pricing adjustments..."</div>
+                        </div>
+
+                        <!-- Vector Dimensions Grid -->
+                        <div class="grid grid-cols-2 gap-x-4 gap-y-1 mb-3">
+                            <!-- High scoring dimensions -->
+                            <div class="flex items-center text-xs">
+                                <span class="w-16 text-gray-500">Finance</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-1.5 mx-1">
+                                    <div class="bg-green-500 h-1.5 rounded-full" style="width: 94%"></div>
+                                </div>
+                                <span class="w-8 text-right font-mono text-green-600">.94</span>
+                            </div>
+                            <div class="flex items-center text-xs">
+                                <span class="w-16 text-gray-500">Budget</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-1.5 mx-1">
+                                    <div class="bg-green-500 h-1.5 rounded-full" style="width: 91%"></div>
+                                </div>
+                                <span class="w-8 text-right font-mono text-green-600">.91</span>
+                            </div>
+                            <div class="flex items-center text-xs">
+                                <span class="w-16 text-gray-500">Executive</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-1.5 mx-1">
+                                    <div class="bg-green-500 h-1.5 rounded-full" style="width: 87%"></div>
+                                </div>
+                                <span class="w-8 text-right font-mono text-green-600">.87</span>
+                            </div>
+                            <div class="flex items-center text-xs">
+                                <span class="w-16 text-gray-500">Pricing</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-1.5 mx-1">
+                                    <div class="bg-green-500 h-1.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                                <span class="w-8 text-right font-mono text-green-600">.85</span>
+                            </div>
+                            <div class="flex items-center text-xs">
+                                <span class="w-16 text-gray-500">Quarterly</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-1.5 mx-1">
+                                    <div class="bg-raven-brown h-1.5 rounded-full" style="width: 79%"></div>
+                                </div>
+                                <span class="w-8 text-right font-mono text-raven-brown">.79</span>
+                            </div>
+                            <div class="flex items-center text-xs">
+                                <span class="w-16 text-gray-500">Action</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-1.5 mx-1">
+                                    <div class="bg-raven-brown h-1.5 rounded-full" style="width: 76%"></div>
+                                </div>
+                                <span class="w-8 text-right font-mono text-raven-brown">.76</span>
+                            </div>
+                            <div class="flex items-center text-xs">
+                                <span class="w-16 text-gray-500">Meeting</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-1.5 mx-1">
+                                    <div class="bg-raven-brown h-1.5 rounded-full" style="width: 72%"></div>
+                                </div>
+                                <span class="w-8 text-right font-mono text-raven-brown">.72</span>
+                            </div>
+                            <div class="flex items-center text-xs">
+                                <span class="w-16 text-gray-500">Formal</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-1.5 mx-1">
+                                    <div class="bg-raven-brown h-1.5 rounded-full" style="width: 68%"></div>
+                                </div>
+                                <span class="w-8 text-right font-mono text-raven-brown">.68</span>
+                            </div>
+                            <!-- Low scoring dimensions -->
+                            <div class="flex items-center text-xs">
+                                <span class="w-16 text-gray-400">Technical</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-1.5 mx-1">
+                                    <div class="bg-gray-400 h-1.5 rounded-full" style="width: 15%"></div>
+                                </div>
+                                <span class="w-8 text-right font-mono text-gray-400">.15</span>
+                            </div>
+                            <div class="flex items-center text-xs">
+                                <span class="w-16 text-gray-400">Legal</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-1.5 mx-1">
+                                    <div class="bg-gray-400 h-1.5 rounded-full" style="width: 8%"></div>
+                                </div>
+                                <span class="w-8 text-right font-mono text-gray-400">.08</span>
+                            </div>
+                            <div class="flex items-center text-xs">
+                                <span class="w-16 text-gray-400">Marketing</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-1.5 mx-1">
+                                    <div class="bg-gray-400 h-1.5 rounded-full" style="width: 5%"></div>
+                                </div>
+                                <span class="w-8 text-right font-mono text-gray-400">.05</span>
+                            </div>
+                            <div class="flex items-center text-xs">
+                                <span class="w-16 text-gray-400">HR</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-1.5 mx-1">
+                                    <div class="bg-gray-400 h-1.5 rounded-full" style="width: 3%"></div>
+                                </div>
+                                <span class="w-8 text-right font-mono text-gray-400">.03</span>
+                            </div>
+                        </div>
+                        <div class="text-center text-gray-400 text-xs">... +756 more dimensions</div>
+
+                        <!-- What this enables -->
+                        <div class="pt-3 mt-3 border-t border-gray-200 bg-green-50 -mx-4 -mb-4 p-4 rounded-b-lg">
+                            <p class="text-xs text-green-700 font-medium mb-1">This email will be found when you ask:</p>
+                            <div class="text-xs text-green-600 space-y-1">
+                                <div>"What did we discuss about pricing?" <span class="text-green-500">(.85 match)</span></div>
+                                <div>"CFO meeting follow-ups" <span class="text-green-500">(.87 match)</span></div>
+                                <div>"Q3 budget decisions" <span class="text-green-500">(.91 match)</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-raven-dark rounded-lg">
+                        <p class="text-raven-tan text-sm italic text-center">
+                            "768 dimensions of understanding - that's how Corbie knows 'budget' and 'pricing' are the same conversation."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Stats -->
+            <div class="grid grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto text-center">
+                <div>
+                    <div class="text-4xl font-bold text-raven-brown mb-2">768</div>
+                    <p class="text-gray-600 text-sm">Dimensions of meaning per item</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-raven-brown mb-2">10x</div>
+                    <p class="text-gray-600 text-sm">More relevant results than keyword search</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-raven-brown mb-2">&lt;30s</div>
+                    <p class="text-gray-600 text-sm">To search years of company data</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-raven-brown mb-2">Zero</div>
+                    <p class="text-gray-600 text-sm">Training required for your team</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Integrations -->
-    <section class="py-20 px-4 bg-white">
+    <section class="py-20 px-4 bg-raven-light">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-raven-dark mb-4">
                 Connects to Everything You Use
