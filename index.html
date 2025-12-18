@@ -362,6 +362,43 @@ ORDER BY e.date DESC;</pre>
                         <p class="text-orange-600 text-xs mt-2 italic">Wait 2-3 days for IT. Still miss related content.</p>
                     </div>
 
+                    <!-- NoSQL Query Alternative -->
+                    <div class="bg-purple-50 border-l-4 border-purple-400 p-6 rounded-r-lg">
+                        <h3 class="font-semibold text-purple-800 mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                            </svg>
+                            Or Query MongoDB/NoSQL...
+                        </h3>
+                        <p class="text-purple-700 text-sm mb-3">Still need complex aggregation pipelines across collections:</p>
+                        <div class="bg-gray-900 p-3 rounded font-mono text-xs text-green-400 overflow-x-auto">
+                            <pre class="whitespace-pre-wrap">db.emails.aggregate([
+  { $match: {
+    $or: [
+      { body: /pricing|budget|cost/i },
+      { subject: /pricing|budget/i }
+    ],
+    "contact.company": "ABC Corp"
+  }},
+  { $lookup: {
+    from: "meetings",
+    localField: "contactId",
+    foreignField: "contactId",
+    as: "meetings"
+  }},
+  { $lookup: {
+    from: "deals",
+    localField: "contactId",
+    foreignField: "contactId",
+    as: "deals"
+  }},
+  { $unwind: "$meetings" },
+  { $sort: { date: -1 }}
+])</pre>
+                        </div>
+                        <p class="text-purple-600 text-xs mt-2 italic">Complex pipelines. Still keyword-based. Still misses "rates" = "pricing".</p>
+                    </div>
+
                     <!-- Corbie Search -->
                     <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
                         <h3 class="font-semibold text-green-800 mb-2 flex items-center">
