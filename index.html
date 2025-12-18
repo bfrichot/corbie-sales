@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corbie AI - Intelligent Business Automation | IT Raven</title>
+    <meta name="description" content="Corbie AI connects to your existing business systems and delivers instant intelligence. Ask questions in plain English, get answers in seconds.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'raven-dark': '#1D3433',
+                        'raven-brown': '#7C5C3E',
+                        'raven-tan': '#B8A189',
+                        'raven-sage': '#A1A696',
+                        'raven-teal': '#566868',
+                        'raven-light': '#F3F2ED',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1D3433 0%, #2a4a48 50%, #1D3433 100%);
+        }
+        .mermaid { background: transparent; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-raven-light text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/logo.png" alt="IT Raven" class="h-10 w-auto">
+                    <span class="text-xl font-semibold text-raven-dark">Corbie AI</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-raven-brown transition">Features</a>
+                    <a href="#how-it-works" class="text-gray-600 hover:text-raven-brown transition">How It Works</a>
+                    <a href="#use-cases" class="text-gray-600 hover:text-raven-brown transition">Use Cases</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-raven-brown transition">Pricing</a>
+                    <a href="#contact" class="bg-raven-brown text-white px-5 py-2 rounded-lg hover:bg-raven-dark transition">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                Your Business Data,<br>
+                <span class="text-raven-tan">Instantly Intelligent</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Corbie AI connects to your existing systems and answers questions in plain English.
+                No more digging through emails, CRM, or meeting notes.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-raven-tan text-raven-dark px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white transition">
+                    Schedule a Demo
+                </a>
+                <a href="#how-it-works" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/10 transition">
+                    See How It Works
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-raven-dark mb-4">
+                Sound Familiar?
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Your team spends hours searching for information that should be at their fingertips.
+            </p>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-raven-light p-6 rounded-xl text-center">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-raven-dark mb-2">Hours Wasted</h3>
+                    <p class="text-sm text-gray-600">Searching through emails, CRM, and documents for basic information</p>
+                </div>
+                <div class="bg-raven-light p-6 rounded-xl text-center">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-raven-dark mb-2">IT Bottleneck</h3>
+                    <p class="text-sm text-gray-600">Waiting for IT to generate reports that take days</p>
+                </div>
+                <div class="bg-raven-light p-6 rounded-xl text-center">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-raven-dark mb-2">Knowledge Walks Out</h3>
+                    <p class="text-sm text-gray-600">When employees leave, critical knowledge goes with them</p>
+                </div>
+                <div class="bg-raven-light p-6 rounded-xl text-center">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-raven-dark mb-2">Data Silos</h3>
+                    <p class="text-sm text-gray-600">Information scattered across 10+ disconnected systems</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-raven-dark mb-4">
+                What Corbie AI Does
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                One intelligent layer across all your business data.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-raven-brown/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-raven-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-raven-dark mb-2">Knowledge Search</h3>
+                    <p class="text-gray-600 mb-4">Ask questions in plain English across all your company data. Get instant, accurate answers.</p>
+                    <p class="text-sm text-raven-brown italic">"What do we know about ABC Corp?"</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-raven-brown/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-raven-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-raven-dark mb-2">Automated Reports</h3>
+                    <p class="text-gray-600 mb-4">Generate intelligence reports on demand. No more waiting for IT or manual research.</p>
+                    <p class="text-sm text-raven-brown italic">"Generate a briefing for my meeting with Shipley"</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-raven-brown/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-raven-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-raven-dark mb-2">Meeting Intelligence</h3>
+                    <p class="text-gray-600 mb-4">Every meeting captured, summarized, and searchable. Never lose discussion context.</p>
+                    <p class="text-sm text-raven-brown italic">"What was decided in last week's project review?"</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-raven-brown/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-raven-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-raven-dark mb-2">Data Correlation</h3>
+                    <p class="text-gray-600 mb-4">Connect the dots across email, CRM, and documents automatically.</p>
+                    <p class="text-sm text-raven-brown italic">"Show me the complete history with this customer"</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-raven-brown/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-raven-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-raven-dark mb-2">Trend Analysis</h3>
+                    <p class="text-gray-600 mb-4">Spot patterns in your data. Identify trends before they become problems.</p>
+                    <p class="text-sm text-raven-brown italic">"What's the trend in support tickets this quarter?"</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-raven-brown/10 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-raven-brown" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-raven-dark mb-2">Institutional Memory</h3>
+                    <p class="text-gray-600 mb-4">Preserve company knowledge forever. New hires get up to speed instantly.</p>
+                    <p class="text-sm text-raven-brown italic">"How did we handle the 2023 supply issue?"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-raven-dark mb-4">
+                How Corbie AI Works
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Connect to your existing systems. No rip-and-replace required.
+            </p>
+
+            <!-- Architecture Diagram -->
+            <div class="bg-raven-light p-8 rounded-xl mb-12">
+                <div class="mermaid">
+graph TB
+    subgraph YourSystems["Your Existing Systems"]
+        Email["Email<br/>Microsoft 365"]
+        Calendar["Calendar"]
+        CRM["CRM<br/>HubSpot/Dynamics"]
+        Meetings["Meeting Notes<br/>Zoom/Teams"]
+        Files["Documents<br/>SharePoint"]
+    end
+
+    subgraph CorbieAI["Corbie AI Platform"]
+        Connectors["Secure<br/>Connectors"]
+        AI["AI Processing"]
+        Memory[("Intelligent<br/>Memory")]
+    end
+
+    subgraph Output["Your Team Gets"]
+        Search["Instant<br/>Answers"]
+        Reports["Automated<br/>Reports"]
+        Insights["Business<br/>Insights"]
+    end
+
+    Email --> Connectors
+    Calendar --> Connectors
+    CRM --> Connectors
+    Meetings --> Connectors
+    Files --> Connectors
+
+    Connectors --> AI
+    AI --> Memory
+
+    Memory --> Search
+    Memory --> Reports
+    Memory --> Insights
+
+    style YourSystems fill:#e8f5e9
+    style CorbieAI fill:#e3f2fd
+    style Output fill:#fff3e0
+                </div>
+            </div>
+
+            <!-- Steps -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-raven-brown text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
+                    <h3 class="text-xl font-semibold text-raven-dark mb-2">Connect</h3>
+                    <p class="text-gray-600">We connect to your existing systems through secure APIs. No data migration needed.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-raven-brown text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
+                    <h3 class="text-xl font-semibold text-raven-dark mb-2">Index</h3>
+                    <p class="text-gray-600">Corbie AI learns your business context and creates an intelligent knowledge layer.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-raven-brown text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
+                    <h3 class="text-xl font-semibold text-raven-dark mb-2">Query</h3>
+                    <p class="text-gray-600">Your team asks questions in plain English and gets instant, accurate answers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-raven-dark mb-4">
+                Works With Your Tools
+            </h2>
+            <p class="text-center text-gray-600 mb-12">
+                Corbie AI integrates with the systems you already use.
+            </p>
+            <div class="flex flex-wrap justify-center gap-8 items-center opacity-80">
+                <div class="bg-white px-8 py-4 rounded-lg shadow-sm">
+                    <span class="text-lg font-semibold text-gray-700">Microsoft 365</span>
+                </div>
+                <div class="bg-white px-8 py-4 rounded-lg shadow-sm">
+                    <span class="text-lg font-semibold text-gray-700">HubSpot</span>
+                </div>
+                <div class="bg-white px-8 py-4 rounded-lg shadow-sm">
+                    <span class="text-lg font-semibold text-gray-700">Dynamics 365</span>
+                </div>
+                <div class="bg-white px-8 py-4 rounded-lg shadow-sm">
+                    <span class="text-lg font-semibold text-gray-700">Salesforce</span>
+                </div>
+                <div class="bg-white px-8 py-4 rounded-lg shadow-sm">
+                    <span class="text-lg font-semibold text-gray-700">Zoom</span>
+                </div>
+                <div class="bg-white px-8 py-4 rounded-lg shadow-sm">
+                    <span class="text-lg font-semibold text-gray-700">Teams</span>
+                </div>
+                <div class="bg-white px-8 py-4 rounded-lg shadow-sm">
+                    <span class="text-lg font-semibold text-gray-700">SharePoint</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-raven-dark mb-4">
+                Real-World Use Cases
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                See how teams use Corbie AI every day.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-raven-light p-8 rounded-xl">
+                    <h3 class="text-xl font-semibold text-raven-dark mb-4">Sales Intelligence</h3>
+                    <div class="bg-white p-4 rounded-lg mb-4 font-mono text-sm">
+                        "What do we know about Shipley Energy?"
+                    </div>
+                    <p class="text-gray-600 mb-4">Corbie AI searches all emails, meeting notes, and CRM data to deliver a complete customer profile in seconds.</p>
+                    <div class="flex items-center text-green-600">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="font-semibold">2-3 hours of research → 30 seconds</span>
+                    </div>
+                </div>
+                <div class="bg-raven-light p-8 rounded-xl">
+                    <h3 class="text-xl font-semibold text-raven-dark mb-4">Fleet Operations</h3>
+                    <div class="bg-white p-4 rounded-lg mb-4 font-mono text-sm">
+                        "What's our delivery efficiency trend this quarter?"
+                    </div>
+                    <p class="text-gray-600 mb-4">Operations teams get instant analysis from GPS, delivery logs, and fuel data without waiting for IT.</p>
+                    <div class="flex items-center text-green-600">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="font-semibold">Self-service analytics for operations</span>
+                    </div>
+                </div>
+                <div class="bg-raven-light p-8 rounded-xl">
+                    <h3 class="text-xl font-semibold text-raven-dark mb-4">Executive Briefings</h3>
+                    <div class="bg-white p-4 rounded-lg mb-4 font-mono text-sm">
+                        "Prepare me for my meeting with the CFO"
+                    </div>
+                    <p class="text-gray-600 mb-4">Get a complete briefing with relevant history, open items, and suggested talking points.</p>
+                    <div class="flex items-center text-green-600">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="font-semibold">Always prepared, never surprised</span>
+                    </div>
+                </div>
+                <div class="bg-raven-light p-8 rounded-xl">
+                    <h3 class="text-xl font-semibold text-raven-dark mb-4">Knowledge Retention</h3>
+                    <div class="bg-white p-4 rounded-lg mb-4 font-mono text-sm">
+                        "How did we resolve the 2023 supply chain issue?"
+                    </div>
+                    <p class="text-gray-600 mb-4">Institutional knowledge is preserved forever. New hires access years of company wisdom instantly.</p>
+                    <div class="flex items-center text-green-600">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span class="font-semibold">Knowledge never walks out the door</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="py-20 px-4 gradient-bg">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Enterprise-Grade Security
+            </h2>
+            <p class="text-gray-300 mb-12 max-w-2xl mx-auto">
+                Your data is protected at every layer.
+            </p>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+                    <svg class="w-10 h-10 text-raven-tan mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    <h3 class="text-white font-semibold mb-2">Encrypted</h3>
+                    <p class="text-gray-300 text-sm">Data encrypted in transit and at rest</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+                    <svg class="w-10 h-10 text-raven-tan mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    <h3 class="text-white font-semibold mb-2">Isolated</h3>
+                    <p class="text-gray-300 text-sm">Your data never shared with other clients</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+                    <svg class="w-10 h-10 text-raven-tan mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                    </svg>
+                    <h3 class="text-white font-semibold mb-2">Audited</h3>
+                    <p class="text-gray-300 text-sm">Complete audit logging for compliance</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur p-6 rounded-xl">
+                    <svg class="w-10 h-10 text-raven-tan mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                    </svg>
+                    <h3 class="text-white font-semibold mb-2">SOC 2 Ready</h3>
+                    <p class="text-gray-300 text-sm">Enterprise compliance practices</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-raven-dark mb-4">
+                Simple, Transparent Pricing
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Start small, prove value, then scale.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-sm border-2 border-raven-brown relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-raven-brown text-white px-4 py-1 rounded-full text-sm font-semibold">Recommended</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-raven-dark mb-2">Pilot</h3>
+                    <div class="text-3xl font-bold text-raven-brown mb-4">$2,500-5,000<span class="text-base font-normal text-gray-600">/mo</span></div>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            10 users
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Email + Calendar
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            3 core workflows
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            60-day proof of concept
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block text-center bg-raven-brown text-white py-3 rounded-lg font-semibold hover:bg-raven-dark transition">Start Pilot</a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-bold text-raven-dark mb-2">Team</h3>
+                    <div class="text-3xl font-bold text-raven-brown mb-4">$5,000-10,000<span class="text-base font-normal text-gray-600">/mo</span></div>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            50 users
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Full CRM integration
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Custom reports
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Dedicated support
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block text-center border-2 border-raven-brown text-raven-brown py-3 rounded-lg font-semibold hover:bg-raven-brown hover:text-white transition">Contact Sales</a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-bold text-raven-dark mb-2">Enterprise</h3>
+                    <div class="text-3xl font-bold text-raven-brown mb-4">Custom</div>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Unlimited users
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            All integrations
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Custom development
+                        </li>
+                        <li class="flex items-center text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            24/7 support
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block text-center border-2 border-raven-brown text-raven-brown py-3 rounded-lg font-semibold hover:bg-raven-brown hover:text-white transition">Contact Sales</a>
+                </div>
+            </div>
+            <p class="text-center text-gray-500 mt-8">Typical ROI: 3-6 months based on time savings</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 px-4 bg-white">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-raven-dark mb-4">
+                Ready to Get Started?
+            </h2>
+            <p class="text-gray-600 mb-8">
+                Schedule a demo to see how Corbie AI can transform your business intelligence.
+            </p>
+            <div class="bg-raven-light p-8 rounded-xl">
+                <div class="grid md:grid-cols-2 gap-6 text-left">
+                    <div>
+                        <h3 class="font-semibold text-raven-dark mb-2">John Grazioli</h3>
+                        <p class="text-gray-600 text-sm mb-1">Account Executive</p>
+                        <a href="mailto:jgrazioli@itraven.net" class="text-raven-brown hover:underline">jgrazioli@itraven.net</a>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-raven-dark mb-2">Bert Frichot</h3>
+                        <p class="text-gray-600 text-sm mb-1">Technical Architect</p>
+                        <a href="mailto:bfrichot@itraven.net" class="text-raven-brown hover:underline">bfrichot@itraven.net</a>
+                    </div>
+                </div>
+                <div class="mt-6 pt-6 border-t border-gray-300">
+                    <a href="mailto:jgrazioli@itraven.net?subject=Corbie%20AI%20Demo%20Request" class="inline-block bg-raven-brown text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-raven-dark transition">
+                        Schedule a Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 bg-raven-dark text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <img src="assets/logo.png" alt="IT Raven" class="h-10 w-auto brightness-0 invert">
+                    <span class="text-xl font-semibold">Corbie AI</span>
+                </div>
+                <div class="text-gray-400 text-sm">
+                    &copy; 2025 IT Raven. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'neutral',
+            flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
+        });
+    </script>
+</body>
+</html>
