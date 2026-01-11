@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -663,12 +664,17 @@ ORDER BY e.date DESC;</pre>
                         </div>
                     </div>
 
-                    <!-- Vector Space Visualization -->
+                    <!-- Interactive 1536D Vector Space Visualization -->
                     <div class="mt-6 bg-white rounded-lg border border-raven-tan overflow-hidden">
-                        <div class="bg-gray-900 p-4">
-                            <img src="assets/vector-space-768.png"
-                                 alt="1536-dimensional vector space visualization showing how similar data clusters together"
-                                 class="w-full h-auto rounded">
+                        <div class="bg-gray-900 relative" style="height: 300px;">
+                            <canvas id="vectorSpace1536" class="w-full h-full"></canvas>
+                            <div class="absolute top-2 left-2 text-xs text-cyan-400 font-mono opacity-75">
+                                1536D → 3D projection
+                            </div>
+                            <div class="absolute bottom-2 right-2 text-xs text-gray-500">
+                                <span class="text-cyan-400">●</span> Data points
+                                <span class="text-yellow-400 ml-2">●</span> Your query
+                            </div>
                         </div>
                         <div class="p-3 bg-gray-50">
                             <p class="text-xs text-gray-600 text-center">
@@ -677,6 +683,179 @@ ORDER BY e.date DESC;</pre>
                             </p>
                         </div>
                     </div>
+
+                    <script>
+                    (function() {
+                        const canvas = document.getElementById('vectorSpace1536');
+                        if (!canvas) return;
+
+                        const container = canvas.parentElement;
+                        const width = container.clientWidth;
+                        const height = container.clientHeight;
+
+                        // Scene setup
+                        const scene = new THREE.Scene();
+                        const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
+                        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+                        renderer.setSize(width, height);
+                        renderer.setClearColor(0x111827, 1);
+
+                        // Generate 1536D data and project to 3D (simplified PCA simulation)
+                        function generate1536DPoints(count) {
+                            const points = [];
+                            for (let i = 0; i < count; i++) {
+                                // Simulate 1536D vector projected to 3D
+                                // Using weighted random with clustering
+                                const cluster = Math.floor(Math.random() * 5);
+                                const clusterCenter = [
+                                    [(Math.random() - 0.5) * 2, (Math.random() - 0.5) * 2, (Math.random() - 0.5) * 2],
+                                    [1.5, 0.5, -0.5], [-1.2, 1, 0.8], [0.3, -1.5, 1], [-0.8, -0.8, -1.2]
+                                ][cluster];
+
+                                points.push({
+                                    x: clusterCenter[0] + (Math.random() - 0.5) * 0.8,
+                                    y: clusterCenter[1] + (Math.random() - 0.5) * 0.8,
+                                    z: clusterCenter[2] + (Math.random() - 0.5) * 0.8,
+                                    cluster: cluster
+                                });
+                            }
+                            return points;
+                        }
+
+                        const dataPoints = generate1536DPoints(200);
+
+                        // Create point cloud
+                        const geometry = new THREE.BufferGeometry();
+                        const positions = new Float32Array(dataPoints.length * 3);
+                        const colors = new Float32Array(dataPoints.length * 3);
+
+                        const clusterColors = [
+                            [0, 1, 1],      // cyan
+                            [0.3, 0.8, 1],  // light blue
+                            [0, 0.9, 0.7],  // teal
+                            [0.5, 0.8, 1],  // sky
+                            [0, 0.7, 0.9]   // blue-green
+                        ];
+
+                        dataPoints.forEach((p, i) => {
+                            positions[i * 3] = p.x;
+                            positions[i * 3 + 1] = p.y;
+                            positions[i * 3 + 2] = p.z;
+
+                            const c = clusterColors[p.cluster];
+                            colors[i * 3] = c[0];
+                            colors[i * 3 + 1] = c[1];
+                            colors[i * 3 + 2] = c[2];
+                        });
+
+                        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+                        geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+                        const material = new THREE.PointsMaterial({
+                            size: 0.08,
+                            vertexColors: true,
+                            transparent: true,
+                            opacity: 0.9
+                        });
+
+                        const pointCloud = new THREE.Points(geometry, material);
+                        scene.add(pointCloud);
+
+                        // Add query point (yellow, larger)
+                        const queryGeometry = new THREE.SphereGeometry(0.1, 16, 16);
+                        const queryMaterial = new THREE.MeshBasicMaterial({ color: 0xfbbf24 });
+                        const queryPoint = new THREE.Mesh(queryGeometry, queryMaterial);
+                        queryPoint.position.set(1.5, 0.5, -0.5);
+                        scene.add(queryPoint);
+
+                        // Add wireframe sphere
+                        const sphereGeometry = new THREE.SphereGeometry(2.5, 16, 12);
+                        const wireframeMaterial = new THREE.MeshBasicMaterial({
+                            color: 0x3b82f6,
+                            wireframe: true,
+                            transparent: true,
+                            opacity: 0.1
+                        });
+                        const wireframeSphere = new THREE.Mesh(sphereGeometry, wireframeMaterial);
+                        scene.add(wireframeSphere);
+
+                        // Add connection lines from query to nearby points
+                        const lineMaterial = new THREE.LineBasicMaterial({
+                            color: 0xfbbf24,
+                            transparent: true,
+                            opacity: 0.3
+                        });
+
+                        // Find 5 nearest points to query
+                        const queryPos = new THREE.Vector3(1.5, 0.5, -0.5);
+                        const distances = dataPoints.map((p, i) => ({
+                            index: i,
+                            dist: Math.sqrt(Math.pow(p.x - queryPos.x, 2) + Math.pow(p.y - queryPos.y, 2) + Math.pow(p.z - queryPos.z, 2))
+                        }));
+                        distances.sort((a, b) => a.dist - b.dist);
+
+                        for (let i = 0; i < 5; i++) {
+                            const p = dataPoints[distances[i].index];
+                            const lineGeometry = new THREE.BufferGeometry().setFromPoints([
+                                queryPos,
+                                new THREE.Vector3(p.x, p.y, p.z)
+                            ]);
+                            const line = new THREE.Line(lineGeometry, lineMaterial);
+                            scene.add(line);
+                        }
+
+                        camera.position.z = 5;
+
+                        // Animation
+                        let mouseX = 0, mouseY = 0;
+                        canvas.addEventListener('mousemove', (e) => {
+                            const rect = canvas.getBoundingClientRect();
+                            mouseX = ((e.clientX - rect.left) / width - 0.5) * 2;
+                            mouseY = ((e.clientY - rect.top) / height - 0.5) * 2;
+                        });
+
+                        function animate() {
+                            requestAnimationFrame(animate);
+
+                            // Auto-rotate + mouse influence
+                            pointCloud.rotation.y += 0.002;
+                            pointCloud.rotation.x = mouseY * 0.3;
+                            pointCloud.rotation.y += mouseX * 0.01;
+
+                            wireframeSphere.rotation.y = pointCloud.rotation.y;
+                            wireframeSphere.rotation.x = pointCloud.rotation.x;
+
+                            // Pulse query point
+                            const scale = 1 + Math.sin(Date.now() * 0.003) * 0.2;
+                            queryPoint.scale.set(scale, scale, scale);
+                            queryPoint.rotation.y = pointCloud.rotation.y;
+                            queryPoint.rotation.x = pointCloud.rotation.x;
+
+                            // Update query position rotation
+                            const qx = 1.5, qy = 0.5, qz = -0.5;
+                            const cosY = Math.cos(pointCloud.rotation.y);
+                            const sinY = Math.sin(pointCloud.rotation.y);
+                            const cosX = Math.cos(pointCloud.rotation.x);
+                            const sinX = Math.sin(pointCloud.rotation.x);
+                            queryPoint.position.x = qx * cosY - qz * sinY;
+                            queryPoint.position.z = qx * sinY + qz * cosY;
+                            queryPoint.position.y = qy * cosX - queryPoint.position.z * sinX;
+
+                            renderer.render(scene, camera);
+                        }
+
+                        animate();
+
+                        // Responsive resize
+                        window.addEventListener('resize', () => {
+                            const w = container.clientWidth;
+                            const h = container.clientHeight;
+                            camera.aspect = w / h;
+                            camera.updateProjectionMatrix();
+                            renderer.setSize(w, h);
+                        });
+                    })();
+                    </script>
 
                     <!-- Visual Vector Tag Example - Full Element -->
                     <div class="mt-6 p-4 bg-white rounded-lg border border-raven-tan">
