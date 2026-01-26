@@ -127,6 +127,60 @@
         </div>
     </section>
 
+    <!-- Ask Corbie Demo Section -->
+    <section id="demo" class="py-20 px-4 bg-gradient-to-br from-raven-dark to-raven-teal">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    See Corbie in Action
+                </h2>
+                <p class="text-white/70 text-lg">
+                    Click a question to see how Corbie responds
+                </p>
+            </div>
+
+            <!-- Chat Interface -->
+            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                <!-- Chat Header -->
+                <div class="bg-raven-brown px-6 py-4 flex items-center gap-3">
+                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                        <span class="text-raven-brown font-bold text-lg">C</span>
+                    </div>
+                    <div>
+                        <div class="text-white font-semibold">Corbie AI</div>
+                        <div class="text-white/60 text-sm flex items-center gap-1">
+                            <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+                            Online
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Messages Area -->
+                <div id="chat-messages" class="p-6 min-h-[300px] bg-gray-50 space-y-4">
+                    <div class="text-center text-gray-400 py-8">
+                        <p>Click a question below to see Corbie's response</p>
+                    </div>
+                </div>
+
+                <!-- Sample Questions -->
+                <div class="p-6 bg-white border-t border-gray-100">
+                    <p class="text-sm text-gray-500 mb-3">Try asking:</p>
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="askCorbie(0)" class="demo-question px-4 py-2 bg-raven-light hover:bg-raven-brown hover:text-white rounded-full text-sm font-medium text-raven-dark transition">
+                            What's the status of Acme Corp?
+                        </button>
+                        <button onclick="askCorbie(1)" class="demo-question px-4 py-2 bg-raven-light hover:bg-raven-brown hover:text-white rounded-full text-sm font-medium text-raven-dark transition">
+                            Prepare me for my 2pm meeting
+                        </button>
+                        <button onclick="askCorbie(2)" class="demo-question px-4 py-2 bg-raven-light hover:bg-raven-brown hover:text-white rounded-full text-sm font-medium text-raven-dark transition">
+                            Who mentioned our competitor?
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section id="features" class="py-20 px-4">
         <div class="max-w-7xl mx-auto">
@@ -481,6 +535,42 @@ graph TB
                     <div class="w-16 h-16 bg-raven-brown text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
                     <h3 class="text-xl font-semibold text-raven-dark mb-2">Query</h3>
                     <p class="text-gray-600">Your team asks questions in plain English and gets instant, accurate answers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Counter Section -->
+    <section id="stats" class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
+                    <div class="text-4xl md:text-5xl font-black text-raven-brown mb-2">
+                        <span class="counter" data-target="182000">0</span>+
+                    </div>
+                    <p class="text-gray-600 font-medium">Knowledge Vectors</p>
+                    <p class="text-gray-400 text-sm">Indexed & searchable</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl md:text-5xl font-black text-raven-brown mb-2">
+                        <span class="counter" data-target="158">0</span>
+                    </div>
+                    <p class="text-gray-600 font-medium">API Endpoints</p>
+                    <p class="text-gray-400 text-sm">Production ready</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl md:text-5xl font-black text-raven-brown mb-2">
+                        <span class="counter" data-target="5">0</span>
+                    </div>
+                    <p class="text-gray-600 font-medium">Report Types</p>
+                    <p class="text-gray-400 text-sm">Auto-generated</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl md:text-5xl font-black text-raven-brown mb-2">
+                        &lt;<span class="counter" data-target="30">0</span>s
+                    </div>
+                    <p class="text-gray-600 font-medium">Query Time</p>
+                    <p class="text-gray-400 text-sm">Any question answered</p>
                 </div>
             </div>
         </div>
@@ -1004,6 +1094,139 @@ ORDER BY e.date DESC;</pre>
                 <div>
                     <div class="text-4xl font-bold text-raven-brown mb-2">Zero</div>
                     <p class="text-gray-600 text-sm">Training required for your team</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Timeline Section -->
+    <section id="before-after" class="py-20 px-4 bg-white">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-raven-dark mb-4">
+                    Your Day, Transformed
+                </h2>
+                <p class="text-gray-600 text-lg">
+                    See how a simple client question changes everything
+                </p>
+            </div>
+
+            <!-- Timeline Comparison -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- BEFORE Column -->
+                <div class="relative">
+                    <div class="text-center mb-6">
+                        <span class="inline-block bg-red-100 text-red-700 px-4 py-2 rounded-full font-semibold">
+                            Before Corbie
+                        </span>
+                    </div>
+                    <div class="bg-red-50 rounded-2xl p-6 border-2 border-red-200">
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 text-red-600 font-bold text-sm">1</div>
+                                <div>
+                                    <p class="font-medium text-gray-800">Search CRM for contact</p>
+                                    <p class="text-sm text-gray-500">10 minutes</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 text-red-600 font-bold text-sm">2</div>
+                                <div>
+                                    <p class="font-medium text-gray-800">Dig through email threads</p>
+                                    <p class="text-sm text-gray-500">15 minutes</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 text-red-600 font-bold text-sm">3</div>
+                                <div>
+                                    <p class="font-medium text-gray-800">Check meeting notes</p>
+                                    <p class="text-sm text-gray-500">10 minutes</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 text-red-600 font-bold text-sm">4</div>
+                                <div>
+                                    <p class="font-medium text-gray-800">Ask colleague for context</p>
+                                    <p class="text-sm text-gray-500">15 minutes</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 text-red-600 font-bold text-sm">5</div>
+                                <div>
+                                    <p class="font-medium text-gray-800">Compile findings manually</p>
+                                    <p class="text-sm text-gray-500">10 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-red-200 text-center">
+                            <span class="text-3xl font-black text-red-600">60 minutes</span>
+                            <p class="text-red-600 text-sm mt-1">+ interrupted workflow</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AFTER Column -->
+                <div class="relative">
+                    <div class="text-center mb-6">
+                        <span class="inline-block bg-green-100 text-green-700 px-4 py-2 rounded-full font-semibold">
+                            With Corbie
+                        </span>
+                    </div>
+                    <div class="bg-green-50 rounded-2xl p-6 border-2 border-green-200">
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 text-green-600 font-bold text-sm">1</div>
+                                <div>
+                                    <p class="font-medium text-gray-800">"@Corbie what's the latest on Acme?"</p>
+                                    <p class="text-sm text-gray-500">5 seconds to type</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm border-2 border-green-300">
+                                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 text-white">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-800">Complete answer with context</p>
+                                    <p class="text-sm text-green-600 font-medium">Instant response</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 p-4 bg-white rounded-xl shadow-sm">
+                            <p class="text-sm text-gray-600 mb-2">Corbie's response includes:</p>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Last 5 email exchanges
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Recent meeting summaries
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Deal status & next steps
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Key contacts & relationships
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-green-200 text-center">
+                            <span class="text-3xl font-black text-green-600">10 seconds</span>
+                            <p class="text-green-600 text-sm mt-1">Zero context switching</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Time Saved Callout -->
+            <div class="mt-12 text-center">
+                <div class="inline-block bg-raven-dark text-white px-8 py-4 rounded-xl">
+                    <span class="text-2xl font-bold">360x faster</span>
+                    <span class="text-white/70 ml-2">for this single question</span>
                 </div>
             </div>
         </div>
@@ -2157,6 +2380,118 @@ ORDER BY e.date DESC;</pre>
             theme: 'neutral',
             flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
         });
+
+        // Stats Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const observerOptions = { threshold: 0.5 };
+
+        const animateCounter = (counter) => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += step;
+                if (current < target) {
+                    counter.textContent = Math.floor(current).toLocaleString();
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target.toLocaleString();
+                }
+            };
+            updateCounter();
+        };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        counters.forEach(counter => counterObserver.observe(counter));
+
+        // Ask Corbie Demo Chat - uses hardcoded responses only (no user input)
+        const demoResponses = [
+            {
+                question: "What's the status of Acme Corp?",
+                response: '<div class="space-y-3"><p class="font-semibold text-raven-dark">Acme Corp Summary:</p><ul class="text-sm space-y-2 text-gray-700"><li class="flex items-start gap-2"><span class="text-raven-brown">\u2022</span><span><strong>Last Contact:</strong> 3 days ago (email from Sarah about Q2 renewal)</span></li><li class="flex items-start gap-2"><span class="text-raven-brown">\u2022</span><span><strong>Open Deal:</strong> $125,000 infrastructure upgrade (Stage: Proposal Sent)</span></li><li class="flex items-start gap-2"><span class="text-raven-brown">\u2022</span><span><strong>Health Score:</strong> 82% <span class="text-green-600">(\u21915% this month)</span></span></li><li class="flex items-start gap-2"><span class="text-raven-brown">\u2022</span><span><strong>Next Action:</strong> Follow up on proposal - decision expected Friday</span></li><li class="flex items-start gap-2"><span class="text-raven-brown">\u2022</span><span><strong>Key Contact:</strong> Sarah Chen (CTO) - Decision maker</span></li></ul><p class="text-xs text-gray-400 mt-3">Sources: 12 emails, 3 meetings, HubSpot CRM</p></div>'
+            },
+            {
+                question: "Prepare me for my 2pm meeting",
+                response: '<div class="space-y-3"><p class="font-semibold text-raven-dark">Meeting Prep: TriBridge Solutions @ 2:00 PM</p><div class="bg-raven-light rounded-lg p-3 text-sm"><p class="font-medium text-raven-dark mb-2">Key Context:</p><ul class="space-y-1 text-gray-700"><li>\u2022 They are evaluating Microsoft 365 migration (mentioned in Jan 15 call)</li><li>\u2022 Budget concern raised by CFO - looking for phased approach</li><li>\u2022 Competitor ConnectWise quoted them last week</li></ul></div><div class="bg-amber-50 rounded-lg p-3 text-sm border border-amber-200"><p class="font-medium text-amber-800 mb-1">\u26A0\uFE0F Watch Out:</p><p class="text-amber-700">Their IT Director (Mike) was skeptical in last meeting. Address security concerns proactively.</p></div><div class="bg-green-50 rounded-lg p-3 text-sm border border-green-200"><p class="font-medium text-green-800 mb-1">\uD83D\uDCA1 Talking Points:</p><ul class="text-green-700 space-y-1"><li>\u2022 Reference their 2023 compliance audit success</li><li>\u2022 Mention similar client: Acme phased migration</li></ul></div></div>'
+            },
+            {
+                question: "Who mentioned our competitor?",
+                response: '<div class="space-y-3"><p class="font-semibold text-raven-dark">Competitor Mentions (Last 30 Days)</p><div class="space-y-3"><div class="bg-red-50 rounded-lg p-3 text-sm border-l-4 border-red-400"><div class="flex justify-between items-start mb-1"><span class="font-medium text-red-800">ConnectWise</span><span class="text-xs text-red-600">3 mentions</span></div><p class="text-gray-700 text-xs">\u2022 TriBridge (Jan 20): Getting quotes from ConnectWise too</p><p class="text-gray-700 text-xs">\u2022 Nexus Corp (Jan 18): Email comparing pricing</p><p class="text-gray-700 text-xs">\u2022 Internal (Jan 15): Lost deal post-mortem</p></div><div class="bg-amber-50 rounded-lg p-3 text-sm border-l-4 border-amber-400"><div class="flex justify-between items-start mb-1"><span class="font-medium text-amber-800">Datto</span><span class="text-xs text-amber-600">1 mention</span></div><p class="text-gray-700 text-xs">\u2022 Harbor City (Jan 22): Asked about backup comparison</p></div></div><p class="text-xs text-gray-400 mt-2">\uD83D\uDD14 Alert configured: You will be notified of new mentions</p></div>'
+            }
+        ];
+
+        function askCorbie(index) {
+            const chatMessages = document.getElementById('chat-messages');
+            const response = demoResponses[index];
+
+            // Clear and rebuild chat - content is hardcoded, not user input
+            chatMessages.textContent = '';
+
+            // Add user question
+            const userMsg = document.createElement('div');
+            userMsg.className = 'flex justify-end';
+            const userBubble = document.createElement('div');
+            userBubble.className = 'bg-raven-brown text-white px-4 py-2 rounded-2xl rounded-br-md max-w-md';
+            const userText = document.createElement('p');
+            userText.className = 'text-sm';
+            userText.textContent = response.question;
+            userBubble.appendChild(userText);
+            userMsg.appendChild(userBubble);
+            chatMessages.appendChild(userMsg);
+
+            // Add typing indicator
+            const typing = document.createElement('div');
+            typing.className = 'flex gap-3';
+            typing.id = 'typing-indicator';
+            const avatar = document.createElement('div');
+            avatar.className = 'w-8 h-8 bg-raven-brown rounded-full flex items-center justify-center flex-shrink-0';
+            avatar.textContent = 'C';
+            avatar.style.color = 'white';
+            avatar.style.fontSize = '0.75rem';
+            avatar.style.fontWeight = 'bold';
+            const dots = document.createElement('div');
+            dots.className = 'bg-gray-200 px-4 py-3 rounded-2xl rounded-bl-md flex gap-1';
+            for (let i = 0; i < 3; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'w-2 h-2 bg-gray-400 rounded-full animate-bounce';
+                dot.style.animationDelay = (i * 150) + 'ms';
+                dots.appendChild(dot);
+            }
+            typing.appendChild(avatar);
+            typing.appendChild(dots);
+            chatMessages.appendChild(typing);
+
+            // Replace with response after delay - hardcoded HTML content
+            setTimeout(() => {
+                typing.remove();
+                const botMsg = document.createElement('div');
+                botMsg.className = 'flex gap-3';
+                const botAvatar = document.createElement('div');
+                botAvatar.className = 'w-8 h-8 bg-raven-brown rounded-full flex items-center justify-center flex-shrink-0';
+                botAvatar.textContent = 'C';
+                botAvatar.style.color = 'white';
+                botAvatar.style.fontSize = '0.75rem';
+                botAvatar.style.fontWeight = 'bold';
+                const botBubble = document.createElement('div');
+                botBubble.className = 'bg-white border border-gray-200 px-4 py-3 rounded-2xl rounded-bl-md max-w-lg shadow-sm';
+                // Response HTML is hardcoded in demoResponses array, safe to use
+                botBubble.innerHTML = response.response;
+                botMsg.appendChild(botAvatar);
+                botMsg.appendChild(botBubble);
+                chatMessages.appendChild(botMsg);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1500);
+        }
     </script>
 </body>
 </html>
