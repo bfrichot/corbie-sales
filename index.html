@@ -540,38 +540,89 @@ graph TB
         </div>
     </section>
 
-    <!-- Stats Counter Section -->
-    <section id="stats" class="py-16 px-4 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="p-6">
-                    <div class="text-4xl md:text-5xl font-black text-raven-brown mb-2">
-                        <span class="counter" data-target="182000">0</span>+
+    <!-- ROI Calculator Section -->
+    <section id="roi-calculator" class="py-20 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-raven-dark mb-4">
+                    Calculate Your Savings
+                </h2>
+                <p class="text-gray-600 text-lg">
+                    See how much time and money Corbie can save your team
+                </p>
+            </div>
+
+            <div class="bg-gradient-to-br from-raven-light to-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Input Side -->
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Team Size (people who search for information)
+                            </label>
+                            <input type="range" id="team-size" min="5" max="100" value="10"
+                                   class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-raven-brown"
+                                   oninput="calculateROI()">
+                            <div class="flex justify-between text-sm text-gray-500 mt-1">
+                                <span>5</span>
+                                <span id="team-size-display" class="font-bold text-raven-brown text-lg">10</span>
+                                <span>100</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Hours per week spent searching for information (per person)
+                            </label>
+                            <input type="range" id="hours-searching" min="2" max="20" value="8"
+                                   class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-raven-brown"
+                                   oninput="calculateROI()">
+                            <div class="flex justify-between text-sm text-gray-500 mt-1">
+                                <span>2 hrs</span>
+                                <span id="hours-display" class="font-bold text-raven-brown text-lg">8 hrs</span>
+                                <span>20 hrs</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Average hourly cost (salary + benefits)
+                            </label>
+                            <input type="range" id="hourly-cost" min="50" max="200" value="75" step="5"
+                                   class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-raven-brown"
+                                   oninput="calculateROI()">
+                            <div class="flex justify-between text-sm text-gray-500 mt-1">
+                                <span>$50</span>
+                                <span id="cost-display" class="font-bold text-raven-brown text-lg">$75</span>
+                                <span>$200</span>
+                            </div>
+                        </div>
                     </div>
-                    <p class="text-gray-600 font-medium">Knowledge Vectors</p>
-                    <p class="text-gray-400 text-sm">Indexed & searchable</p>
-                </div>
-                <div class="p-6">
-                    <div class="text-4xl md:text-5xl font-black text-raven-brown mb-2">
-                        <span class="counter" data-target="158">0</span>
+
+                    <!-- Results Side -->
+                    <div class="bg-raven-dark text-white rounded-xl p-6 flex flex-col justify-center">
+                        <div class="text-center space-y-6">
+                            <div>
+                                <p class="text-white/60 text-sm uppercase tracking-wide">Annual Time Saved</p>
+                                <p class="text-4xl font-black text-green-400" id="hours-saved">3,328</p>
+                                <p class="text-white/60 text-sm">hours per year</p>
+                            </div>
+                            <div class="border-t border-white/20 pt-6">
+                                <p class="text-white/60 text-sm uppercase tracking-wide">Estimated Annual Savings</p>
+                                <p class="text-5xl font-black text-green-400" id="money-saved">$249,600</p>
+                            </div>
+                            <div class="border-t border-white/20 pt-6">
+                                <p class="text-white/60 text-sm uppercase tracking-wide">Equivalent To</p>
+                                <p class="text-2xl font-bold" id="fte-equivalent">1.6 full-time employees</p>
+                            </div>
+                        </div>
                     </div>
-                    <p class="text-gray-600 font-medium">API Endpoints</p>
-                    <p class="text-gray-400 text-sm">Production ready</p>
                 </div>
-                <div class="p-6">
-                    <div class="text-4xl md:text-5xl font-black text-raven-brown mb-2">
-                        <span class="counter" data-target="5">0</span>
-                    </div>
-                    <p class="text-gray-600 font-medium">Report Types</p>
-                    <p class="text-gray-400 text-sm">Auto-generated</p>
-                </div>
-                <div class="p-6">
-                    <div class="text-4xl md:text-5xl font-black text-raven-brown mb-2">
-                        &lt;<span class="counter" data-target="30">0</span>s
-                    </div>
-                    <p class="text-gray-600 font-medium">Query Time</p>
-                    <p class="text-gray-400 text-sm">Any question answered</p>
-                </div>
+
+                <!-- Assumptions Note -->
+                <p class="text-xs text-gray-400 text-center mt-6">
+                    * Based on 80% time reduction for information retrieval tasks. 52 weeks/year, 2080 working hours/FTE.
+                </p>
             </div>
         </div>
     </section>
@@ -2381,38 +2432,33 @@ ORDER BY e.date DESC;</pre>
             flowchart: { useMaxWidth: true, htmlLabels: true, curve: 'basis' }
         });
 
-        // Stats Counter Animation
-        const counters = document.querySelectorAll('.counter');
-        const observerOptions = { threshold: 0.5 };
+        // ROI Calculator
+        function calculateROI() {
+            const teamSize = parseInt(document.getElementById('team-size').value);
+            const hoursSearching = parseInt(document.getElementById('hours-searching').value);
+            const hourlyCost = parseInt(document.getElementById('hourly-cost').value);
 
-        const animateCounter = (counter) => {
-            const target = parseInt(counter.getAttribute('data-target'));
-            const duration = 2000;
-            const step = target / (duration / 16);
-            let current = 0;
+            // Update displays
+            document.getElementById('team-size-display').textContent = teamSize;
+            document.getElementById('hours-display').textContent = hoursSearching + ' hrs';
+            document.getElementById('cost-display').textContent = '$' + hourlyCost;
 
-            const updateCounter = () => {
-                current += step;
-                if (current < target) {
-                    counter.textContent = Math.floor(current).toLocaleString();
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    counter.textContent = target.toLocaleString();
-                }
-            };
-            updateCounter();
-        };
+            // Calculate savings (80% time reduction assumption)
+            const weeksPerYear = 52;
+            const timeReduction = 0.80;
+            const totalHoursSearching = teamSize * hoursSearching * weeksPerYear;
+            const hoursSaved = Math.round(totalHoursSearching * timeReduction);
+            const moneySaved = hoursSaved * hourlyCost;
+            const fteEquivalent = (hoursSaved / 2080).toFixed(1);
 
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter(entry.target);
-                    counterObserver.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+            // Update results
+            document.getElementById('hours-saved').textContent = hoursSaved.toLocaleString();
+            document.getElementById('money-saved').textContent = '$' + moneySaved.toLocaleString();
+            document.getElementById('fte-equivalent').textContent = fteEquivalent + ' full-time employees';
+        }
 
-        counters.forEach(counter => counterObserver.observe(counter));
+        // Initialize calculator on page load
+        document.addEventListener('DOMContentLoaded', calculateROI);
 
         // Ask Corbie Demo Chat - uses hardcoded responses only (no user input)
         const demoResponses = [
