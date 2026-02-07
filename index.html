@@ -2812,7 +2812,7 @@
 
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Client 360 Report -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition group">
                     <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4">
                         <div class="flex items-center gap-3">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2824,6 +2824,16 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Sample Report Thumbnail -->
+                    <a href="assets/client-intelligence-sample.png" target="_blank" class="block relative overflow-hidden">
+                        <img src="assets/client-intelligence-sample.png"
+                             alt="Sample Client 360 Report showing executive summary, company profile, and key contacts"
+                             class="w-full h-48 object-cover object-top transition group-hover:scale-105"
+                             loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end justify-center pb-4">
+                            <span class="text-white text-sm font-medium">Click to view full report</span>
+                        </div>
+                    </a>
                     <div class="p-6">
                         <div class="space-y-3 text-sm text-gray-600">
                             <div class="flex items-center gap-2">
@@ -2854,7 +2864,7 @@
                 </div>
 
                 <!-- ROT Analysis Report -->
-                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition group">
                     <div class="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-4">
                         <div class="flex items-center gap-3">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2866,6 +2876,16 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Sample Report Thumbnail -->
+                    <a href="assets/rot-report-sample.png" target="_blank" class="block relative overflow-hidden">
+                        <img src="assets/rot-report-sample.png"
+                             alt="Sample ROT Analysis Report showing entity classification and sensitivity breakdown"
+                             class="w-full h-48 object-cover object-top transition group-hover:scale-105"
+                             loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition flex items-end justify-center pb-4">
+                            <span class="text-white text-sm font-medium">Click to view full report</span>
+                        </div>
+                    </a>
                     <div class="p-6">
                         <div class="space-y-3 text-sm text-gray-600">
                             <div class="flex items-center gap-2">
@@ -2975,6 +2995,64 @@
                         </div>
                         <div class="mt-6 pt-4 border-t border-gray-100">
                             <p class="text-xs text-gray-400">Powered by: HubSpot • Email Sentiment • Meeting Notes • LinkedIn • Web Intel</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Audit Report -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition md:col-span-2">
+                    <div class="bg-gradient-to-r from-red-600 to-red-700 text-white p-4">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                            <div>
+                                <h3 class="font-bold text-lg">Security Audit Report</h3>
+                                <p class="text-red-100 text-sm">Comprehensive infrastructure security scan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-3 text-sm text-gray-600">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-green-500">✓</span>
+                                    <span>Dependency vulnerability scanning (CVE detection)</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-green-500">✓</span>
+                                    <span>Credential exposure detection in source code</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-green-500">✓</span>
+                                    <span>Port and protocol change tracking</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-green-500">✓</span>
+                                    <span>Docker container health monitoring</span>
+                                </div>
+                            </div>
+                            <div class="space-y-3 text-sm text-gray-600">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-green-500">✓</span>
+                                    <span>Permission and access control auditing</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-green-500">✓</span>
+                                    <span>Credential rotation tracking and alerts</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-green-500">✓</span>
+                                    <span>Firewall and network impact assessment</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-green-500">✓</span>
+                                    <span>Prioritized remediation recommendations</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <p class="text-xs text-gray-400">Scans: Python/Node Dependencies • API Keys • SSH Keys • Docker • Azure Key Vault • File Permissions</p>
                         </div>
                     </div>
                 </div>
